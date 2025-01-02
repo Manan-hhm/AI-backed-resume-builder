@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            font-size: 14px;
+            font-weight: bold;
+        }
+        input, textarea, select, button {
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        textarea {
+            resize: vertical;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="/generate" method="POST">
+        <h2>Resume Builder</h2>
+
+        <!-- Full Name -->
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <!-- Skills -->
+        <label for="skills">Skills (comma-separated):</label>
+        <textarea id="skills" name="skills" rows="4" required></textarea>
+
+        <!-- Work Experience -->
+        <label for="experience">Work Experience:</label>
+        <textarea id="experience" name="experience" rows="6" required></textarea>
+
+        <!-- Template Selection Dropdown -->
+        <label for="template">Choose a Resume Template:</label>
+        <select id="template" name="template" required>
+            <option value="classic">Classic</option>
+            <option value="modern">Modern</option>
+            <option value="creative">Creative</option>
+        </select>
+
+        <!-- Submit Button -->
+        <button type="submit">Generate Resume</button>
+    </form>
+
+</body>
+</html>
+
+    
