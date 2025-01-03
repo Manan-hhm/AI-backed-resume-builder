@@ -11,6 +11,7 @@ def index():
 @app.route('/generate', methods=['POST'])
 def generate():
     name = request.form['name']
+    about_me = request.form['about_me']
     phone = request.form['phone']
     email = request.form['email']
     address = request.form['address']
@@ -21,11 +22,11 @@ def generate():
 
     # Select the template to render based on the user's choice
     if template_choice == 'classic':
-        html_content = render_template('classic_resume.html', name=name, email=email, phone=phone, address=address, skills=skills, experience=experience, education=education)
+        html_content = render_template('classic_resume.html', name=name, about_me=about_me, email=email, phone=phone, address=address, skills=skills, experience=experience, education=education)
     elif template_choice == 'modern':
-        html_content = render_template('modern_resume.html', name=name, email=email, phone=phone, address=address, skills=skills, experience=experience, education=education)
+        html_content = render_template('modern_resume.html', name=name, about_me=about_me,email=email, phone=phone, address=address, skills=skills, experience=experience, education=education)
     elif template_choice == 'creative':
-        html_content = render_template('creative_resume.html', name=name, email=email, phone=phone, address=address, skills=skills, experience=experience, education=education)
+        html_content = render_template('creative_resume.html', name=name, about_me=about_me,email=email, phone=phone, address=address, skills=skills, experience=experience, education=education)
     else:
         # If the template choice is invalid, return a proper response
         return make_response("Invalid template selected", 400)
