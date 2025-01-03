@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Resume</title>
+    <title>Resume</title>
     <style>
         body {
             font-family: 'Verdana', sans-serif;
@@ -117,33 +117,28 @@
 <body>
     <div class="container">
         <div class="profile-header">
-            <h2>{{ name }}'s Creative Resume</h2>
-            <p>{{ tagline }}</p>
+            <h2>{{ name }}'s Resume</h2>
         </div>
 
         <div class="section contact-info">
             <h2>Contact Information</h2>
             <p><strong>Email:</strong> <a href="mailto:{{ email }}">{{ email }}</a></p>
             <p><strong>Phone:</strong> {{ phone }}</p>
-            <p><strong>LinkedIn:</strong> <a href="{{ linkedin }}" target="_blank">LinkedIn Profile</a></p>
-            <p><strong>Location:</strong> {{ location }}</p>
+            <p><strong>Address:</strong> {{ address }}</p>
         </div>
 
         <div class="section">
             <h2>Skills</h2>
             <ul>
-                {{#skills}}
-                <li>{{.}}</li>
-                {{/skills}}
+                <li>{{ skills }}</li>
+                
             </ul>
         </div>
 
         <div class="section">
             <h2>Work Experience</h2>
             <ul>
-                {{#experience}}
-                <li>{{.}}</li>
-                {{/experience}}
+                <li>{{ experience }}</li>
             </ul>
         </div>
 
